@@ -1,170 +1,177 @@
 <?php
-/*
-===================
-History of PHP
-===================
-Creator of PHP: Rasmus Lerdorf.
-PHP Sence: 1994.
-PHP   = Personal Home Page
-or
-PHP   = PHP Hipertext Preprosesor.
-HTTP  = Hyper Text Transfer Protocol.
-HTTPS = Securite socet leyars.
-URL   = Uniform Resource Locator. 
-WAMP  = Windows Apache MySQL PHP.
-XAMPP = Cross Platform Apache MariaDB PHP and Perl
-SQl   = stactur query language.
+
+date_default_timezone_set('Asia/Dhaka');
+
+$date = date('d/m/y');
+$time = date('h:i:s');
+$am_pm =date('A');
+$day = date('l');
 
 
-.........................................................
-variable 3 items:
 
-1nd = LOCAL VARIABLE.  (Write in function & access from function.)
-2st= GLOBALS VARIABLE. (Write out of function & access out from function.)
-		{
-		SUPER GLOBAlS: (access in function.) 
-			
-			$_POST
-			$_GET
-			$_FILES
-			$_SESSION
-			$_COOKIES
-			$_GLOBALS
-			$_SERVER
-			$_REQUEST
+	if ($time <=12 && $time >= 6  && $am_pm == 'AM') {
+		echo "good morning ".$day." ".$date;
 
+	}elseif ($time <= 3 && $time >= 12  && $am_pm == 'PM') {
+		echo "good noon ".$day." ".$date;
+
+	}elseif ($time <= 6 && $time >= 3  && $am_pm == 'PM') {
+		echo "good afternoon ".$day." ".$date;
+
+	}elseif ($time <= 12 && $time >= 6 && $am_pm == 'PM') {
+		echo "good evening ".$day." ".$date;
+
+	}elseif ($time <= 6 && $time >= 12 && $am_pm == 'AM') {
+		echo "good night ".$day." ".$date;
+	}
+	else{
+		echo "Invalid timezome";
+	}
+
+echo "<br>";
+echo "<br>";
+
+date_default_timezone_set('Asia/Dhaka');
+
+$date = date('d/m/y');
+$hour = date('h');
+$min  = date('i');
+$am_pm =date('A');
+$day = date('l');
+
+
+
+	if ($hour <= 12 && $hour >= 6  && $min <= 59 ) {
+		echo "good morning ".$day." ".$date;
+
+	}elseif ($hour <= 15 && $hour >= 12  && $min <= 59 ) {
+		echo "good noon ".$day." ".$date;
+
+	}elseif ($hour <= 18 && $hour >= 15  && $min <= 59 ) {
+		echo "good afternoon ".$day." ".$date;
+
+	}elseif ($hour <= 24 && $hour >= 18 && $min <= 59 ) {
+		echo "good evening ".$day." ".$date;
+
+	}elseif ($hour <= 6 && $hour >= 24 && $min <= 59 ) {
+		echo "good night ".$day." ".$date;
+	}
+	else{
+		echo "Invalid timezome";
+	}
+
+
+
+
+date_default_timezone_set("Asia/Dhaka");
+
+$time1 = date("h:i:s A");
+$time2 = date("h:i:s a");
+
+echo $time1."<br>";
+echo $time2."<br>";
+
+
+$date1 = date("d/m/y");
+$date2 = date("D/M/Y");
+$date3 = date("D");
+
+echo $date1."<br>";
+echo $date2."<br>";
+echo $date3."<br>";
+// full day
+$day  = date("l");
+
+echo $day."<br>";
+
+
+
+// switch condition problem.............
+$num = 0;
+
+	switch($num){
+
+		case ($num > 100 || $num < 0):
+			echo "invalid number";
+			break;
+
+		case ($num <= 100 && $num >= 80):
+			echo "A+";
+			break;
+
+		case ($num <= 79 && $num >= 70):
+			echo "A";
+			break;
+
+		case ($num <= 69 && $num >= 60):
+			echo "A-";
+			break;
+		case ($num <= 59 && $num >= 50):
+			echo "B";
+			break;
+
+		case ($num <= 49 && $num >= 40):
+			echo "C";
+			break;
+
+		case ($num <= 39 && $num >= 33):
+			echo "D";
+			break;
+
+	default:
+	echo "fail";
+	break;
+
+}
+
+
+
+
+// if condition........
+$result = 0;
+
+	if ($result > 100 || $result < 0 ) {
+		echo "invalid numer";
+	}elseif ($result <= 100 && $result >= 80){
+		echo "A+";
+	}elseif ($result <= 79 && $result >=70) {
+		echo "A";
+	}elseif ($result <= 69 && $result >= 60) {
+		echo "A-";
+	}elseif ($result <= 59 && $result >= 50) {
+		echo "B";
+	}elseif ($result <= 49 && $result >= 40) {
+		echo "C";
+	}elseif ($result <= 39 && $result >= 33) {
+		echo "D";
+	}
+	else{
+		echo "fail";
+	}
+
+
+
+$result = 59;
+
+	if ($result <= 100 && $result >= 0) {
+		if ($result >= 80) {
+			echo "A+";
+		}elseif ($result >=70) {
+			echo "A";
+		}elseif ($result >=60) {
+			echo "A-";
+		}elseif ($result >=50) {
+			echo "B";
+		}elseif ($result >=40) {
+			echo "C";
+		}elseif ($result >=33) {
+			echo "D";
+		}else{
+			echo "fail";
 		}
-3rd = STATICT VARIABLE.(not want to change value.)
-*/
 
-/*============================================
-============================================
-variable
-============================================
-============================================*/
-$a = "Hello!";
-echo $a."<br>";
-// ............................................
-$a = "Hello!";
-$b = "This is PHP programing.";
-echo $a." ".$b."<br>";
-// ............................................
-$x = 12;
-$y = 13;
-echo $x+$y."<br><br>";
-// ............................................
-echo "First number is: 12"."<br>";
-echo "Secend number is: 13"."<br>";
-$x = 12;
-$y = 13;
-$z = $x+$y;
-echo "The sum is:"." ".$z."<br><br>";
+	}else{
+		echo "invalid number";
+	}
 
-
-echo "First number is: 13"."<br>";
-echo "Secend number is: 12"."<br>";
-$x = 13;
-$y = 12;
-$z = $x-$y;
-echo "The minus is: ".$z."<br><br>";
-
-
-echo "First number is: 13"."<br>";
-echo "Secend number is: 12"."<br>";
-$x = 13;
-$y = 12;
-$z = $x*$y;
-echo "The multiply is: ".$z."<br><br>";
-
-
-echo "First number is: 12"."<br>";
-echo "Secend number is: 4"."<br>";
-$x = 12;
-$y = 4;
-$z = $x/$y;
-echo "The divide is: ".$z."<br><br>";
-
-
-echo "First number is: 15"."<br>";
-echo "Secend number is: 12"."<br>";
-$x = 15;
-$y = 12;
-$z = $x%$y;
-echo "The Modulus is: ".$z."<br><br>";
-/*============================================
-============================================
-constant variable (not change value)
-============================================
-============================================*/
-
-echo "Constant variable:"."<br>";
-define('shamim', 1000);
-echo shamim."<br><br>";
-
-echo "Another Constant variable:"."<br>";
-define('SHAMIM', 1000);
-echo SHAMIM."<br><br>";
-/*============================================
-============================================
-function
-============================================
-============================================*/
-echo "Function String:"."<br>";
-
-function show($a, $s,$b){
- // peramitar  ^  ^  ^
-	echo $a.$s.$b;
-}
-show('Shamim',' ','Dewan');
-//argoment^    ^     ^  
-echo "<br><br>";
-// ....................................................
-echo "Function Intiger:"."<br>";
-
-function add($a, $b,$c){
-// peramitar  ^  ^  ^
-	echo $a+$b*$c;
-}
-        add(10,20,30);
-//argoment  ^   ^  ^
-echo "<br><br>";
-/*============================================
-============================================
-Building function
-============================================
-============================================*/
-echo "string lenght:"."<br>";
-
-$length = "Shamim Dewan";
-$result = strlen($length);
-echo $result."<br><br>";
-// ..............................................
-echo "string word count:"."<br>";
-
-$abc = "Shamim Dewan";
-$count = str_word_count($abc);
-echo $count."<br><br>";
-// ......................................................
-echo "revers: Dhaka"."<br>";
-
-$rev = "Dhaka";
-$rev_result = strrev($rev);
-echo $rev_result."<br><br>";
-// ...........................................
-echo "replace Shamim Dewan to: "."<br>";
-$rep = "Shamim Dewan";
-echo str_replace("Dewan", "Ahamad.", $rep)."<br>";
-
-
-?> 
-
-<?php 
-$s = "shamim";
-$d = 5;
-$d .=$s;
-echo $d;
-
-echo "shamim dewan";
-
- ?>
-
+?>
