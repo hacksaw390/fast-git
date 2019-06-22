@@ -1,177 +1,146 @@
-<?php
+<?php 
 
-date_default_timezone_set('Asia/Dhaka');
+$arrayName = array(10,2,5,52,5,5,);
 
-$date = date('d/m/y');
-$time = date('h:i:s');
-$am_pm =date('A');
-$day = date('l');
-
+foreach($arrayName as $shamim){
+	echo $shamim."<br>";
+}
 
 
-	if ($time <=12 && $time >= 6  && $am_pm == 'AM') {
-		echo "good morning ".$day." ".$date;
-
-	}elseif ($time <= 3 && $time >= 12  && $am_pm == 'PM') {
-		echo "good noon ".$day." ".$date;
-
-	}elseif ($time <= 6 && $time >= 3  && $am_pm == 'PM') {
-		echo "good afternoon ".$day." ".$date;
-
-	}elseif ($time <= 12 && $time >= 6 && $am_pm == 'PM') {
-		echo "good evening ".$day." ".$date;
-
-	}elseif ($time <= 6 && $time >= 12 && $am_pm == 'AM') {
-		echo "good night ".$day." ".$date;
-	}
-	else{
-		echo "Invalid timezome";
+for ($i=0; $i <=50 ; $i++) { 
+	// if (($i%2)==0) {
+	if (($i%2)==1) {
+		
+	echo $i."<br>";
 	}
 
-echo "<br>";
-echo "<br>";
-
-date_default_timezone_set('Asia/Dhaka');
-
-$date = date('d/m/y');
-$hour = date('h');
-$min  = date('i');
-$am_pm =date('A');
-$day = date('l');
-
-
-
-	if ($hour <= 12 && $hour >= 6  && $min <= 59 ) {
-		echo "good morning ".$day." ".$date;
-
-	}elseif ($hour <= 15 && $hour >= 12  && $min <= 59 ) {
-		echo "good noon ".$day." ".$date;
-
-	}elseif ($hour <= 18 && $hour >= 15  && $min <= 59 ) {
-		echo "good afternoon ".$day." ".$date;
-
-	}elseif ($hour <= 24 && $hour >= 18 && $min <= 59 ) {
-		echo "good evening ".$day." ".$date;
-
-	}elseif ($hour <= 6 && $hour >= 24 && $min <= 59 ) {
-		echo "good night ".$day." ".$date;
-	}
-	else{
-		echo "Invalid timezome";
-	}
-
-
-
-
-date_default_timezone_set("Asia/Dhaka");
-
-$time1 = date("h:i:s A");
-$time2 = date("h:i:s a");
-
-echo $time1."<br>";
-echo $time2."<br>";
-
-
-$date1 = date("d/m/y");
-$date2 = date("D/M/Y");
-$date3 = date("D");
-
-echo $date1."<br>";
-echo $date2."<br>";
-echo $date3."<br>";
-// full day
-$day  = date("l");
-
-echo $day."<br>";
-
-
-
-// switch condition problem.............
-$num = 0;
-
-	switch($num){
-
-		case ($num > 100 || $num < 0):
-			echo "invalid number";
-			break;
-
-		case ($num <= 100 && $num >= 80):
-			echo "A+";
-			break;
-
-		case ($num <= 79 && $num >= 70):
-			echo "A";
-			break;
-
-		case ($num <= 69 && $num >= 60):
-			echo "A-";
-			break;
-		case ($num <= 59 && $num >= 50):
-			echo "B";
-			break;
-
-		case ($num <= 49 && $num >= 40):
-			echo "C";
-			break;
-
-		case ($num <= 39 && $num >= 33):
-			echo "D";
-			break;
-
-	default:
-	echo "fail";
-	break;
 
 }
 
 
+$letter='Gf';
 
-
-// if condition........
-$result = 0;
-
-	if ($result > 100 || $result < 0 ) {
-		echo "invalid numer";
-	}elseif ($result <= 100 && $result >= 80){
-		echo "A+";
-	}elseif ($result <= 79 && $result >=70) {
-		echo "A";
-	}elseif ($result <= 69 && $result >= 60) {
-		echo "A-";
-	}elseif ($result <= 59 && $result >= 50) {
-		echo "B";
-	}elseif ($result <= 49 && $result >= 40) {
-		echo "C";
-	}elseif ($result <= 39 && $result >= 33) {
-		echo "D";
+	if ($letter=='a'||
+		$letter=='A'||
+		$letter=='e'||
+		$letter=='E'||
+		$letter=='i'||
+		$letter=='I'||
+		$letter=='o'||
+		$letter=='O'||
+		$letter=='u'||
+		$letter=='U') {
+		echo 'This is Vowel';
+	}elseif ( $letter=='b'||
+			  $letter=='B'||
+			  $letter=='c'||
+			  $letter=='C'||
+			  $letter=='b'||
+			  $letter=='D'||
+			  $letter=='f'||
+			  $letter=='F'||
+			  $letter=='g'||
+			  $letter=='G'||
+			  $letter=='h'||
+			  $letter=='H'||
+			  $letter=='j'||
+			  $letter=='J'||
+			  $letter=='k'||
+			  $letter=='K'||
+			  $letter=='l'||
+			  $letter=='L'||
+			  $letter=='m'||
+			  $letter=='M'||
+			  $letter=='n'||
+			  $letter=='N'||
+			  $letter=='p'||
+			  $letter=='P'||
+			  $letter=='q'||
+			  $letter=='Q'||
+			  $letter=='r'||
+			  $letter=='R'||
+			  $letter=='s'||
+			  $letter=='S'||
+			  $letter=='t'||
+			  $letter=='T'||
+			  $letter=='v'||
+			  $letter=='V'||
+			  $letter=='w'||
+			  $letter=='W'||
+			  $letter=='x'||
+			  $letter=='X'||
+			  $letter=='y'||
+			  $letter=='Y'||
+			  $letter=='z'||
+			  $letter=='Z'
+						) {
+		echo 'This is consonant';
 	}
 	else{
-		echo "fail";
+		echo 'You can check only one character';
 	}
 
 
 
-$result = 59;
 
-	if ($result <= 100 && $result >= 0) {
-		if ($result >= 80) {
-			echo "A+";
-		}elseif ($result >=70) {
-			echo "A";
-		}elseif ($result >=60) {
-			echo "A-";
-		}elseif ($result >=50) {
-			echo "B";
-		}elseif ($result >=40) {
-			echo "C";
-		}elseif ($result >=33) {
-			echo "D";
-		}else{
-			echo "fail";
-		}
+$i=1;
+$j=1;
 
-	}else{
-		echo "invalid number";
+for ($i=1; $i<=10 ; $i++) { 
+
+	echo $i."- multiplication table"."<br>";
+
+	for ($j=1; $j <=10 ; $j++) { 
+	$k=$j*$i;
+
+		echo $i.'x'.$j.' = '.$k."<br>";
 	}
+	
+}
 
-?>
+
+
+$i=0;
+$n=50;
+
+while ($i<10) {
+	$n--;
+	$i++;
+}
+echo $n."<br>";
+..............................
+$i=0;
+do {
+	echo $i;
+	$i++;
+} while ($i <= 20);
+.................................
+$i=0;
+while($i <=20){
+	echo $i;
+	$i++;
+}
+.......................?
+$i=20;
+while($i >0){
+	echo $i;
+	$i=$i-2;
+}
+
+.......................................
+for ($i='A'; $i <'Z' ; $i++) { 
+	echo $i."<br>";
+}
+.........................
+for($i=0; $i<=20; $i++){
+	echo $i;
+}
+..........................
+for($i=20; $i>=0; $i=$i-3){
+	echo $i."<br>";
+}
+....................
+for($i=0; $i<=20; $i=$i+2){
+	echo $i."<br>";
+}
+ ?>
